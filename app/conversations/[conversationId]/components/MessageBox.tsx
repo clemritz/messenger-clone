@@ -1,6 +1,7 @@
 "use client";
 
 import Avatar from "@/app/components/Avatar";
+import { HiOutlineCheckCircle } from "react-icons/hi2";
 import { FullMessageType } from "@/app/types";
 import { clsx } from "clsx";
 import { format } from "date-fns";
@@ -59,8 +60,11 @@ const MessageBox: React.FC<MessageBoxProps> = ({ data, isLast }) => {
           )}
         </div>
         {isLast && isOwn && seenList.length > 0 && (
-          <div className="text-xs font-light text-gray-400">
+          <div className="text-xs font-light text-gray-400 flex items-center">
             {`Seen by ${seenList}`}
+            <div className="flex mx-1">
+              <HiOutlineCheckCircle />
+            </div>
           </div>
         )}
       </div>
